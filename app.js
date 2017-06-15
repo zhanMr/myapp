@@ -6,13 +6,19 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+
+//后台
+var login = require('./routes/home/login');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+/*app.set('view engine', 'jade');*/
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
+
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -22,7 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/home/login', login);
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
