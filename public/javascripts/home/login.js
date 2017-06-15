@@ -16,7 +16,8 @@ class Login extends React.Component{
             method: 'post',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            },
+            body: `username=${username}&password=${password}`
         })
         .then(data => data.json())
         .then(json => console.log(json))

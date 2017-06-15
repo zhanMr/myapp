@@ -60,7 +60,8 @@ var Login = function (_React$Component) {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
-                }
+                },
+                body: 'username=' + username + '&password=' + password
             }).then(function (data) {
                 return data.json();
             }).then(function (json) {

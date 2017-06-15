@@ -27,6 +27,13 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//
+app.get(/home/, function (req, res, next) {
+    next();
+})
+
+
+
 app.use('/', routes);
 app.use('/home/login', login);
 
