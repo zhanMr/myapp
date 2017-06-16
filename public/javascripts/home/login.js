@@ -45,5 +45,6 @@ class Login extends React.Component{
 }
 
 export default function(){
-    ReactDOM.render(<Login/>, document.getElementById('js_login'));
+    let em = document.getElementById('js_login');
+    if(em) ReactDOM.render(<Login/>, em);
 }

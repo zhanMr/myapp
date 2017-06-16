@@ -10,7 +10,7 @@ var routes = require('./routes/index');
 
 //后台
 var login = require('./routes/home/login');
-
+var index = require('./routes/home/index');
 var app = express();
 
 // view engine setup
@@ -45,7 +45,7 @@ app.get(/home/, function (req, res, next) {
 
 app.use('/', routes);
 app.use('/home/login', login);
-
+app.use('/home/index', index);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

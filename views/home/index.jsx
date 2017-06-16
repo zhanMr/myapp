@@ -5,7 +5,9 @@ class Index extends React.Component{
         let {title} = this.props;
         return (
             <Layout title={title}>
-                <div className="login_box"><div className="login" id="js_login"></div></div>
+                <div className="box" id="js_index">
+
+                </div>
             </Layout>
         )
     }

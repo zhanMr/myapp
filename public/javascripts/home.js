@@ -13,14 +13,223 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 exports.default = function () {
-    _reactDom2.default.render(_react2.default.createElement(Login, null), document.getElementById('js_login'));
+    var em = document.getElementById('js_index');
+    if (em) _reactDom2.default.render(_react2.default.createElement(Index, null), em);
 };
 
-var _react = __webpack_require__(50);
+var _react = __webpack_require__(33);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(49);
+var _reactDom = __webpack_require__(32);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Index = function (_React$Component) {
+    _inherits(Index, _React$Component);
+
+    function Index(props) {
+        _classCallCheck(this, Index);
+
+        var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
+
+        _this.state = {
+            data: []
+        };
+        return _this;
+    }
+
+    _createClass(Index, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch('/home/index', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(function (data) {
+                return data.json();
+            }).then(function (data) {
+                return _this2.setState({ data: data.data });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var data = this.state.data;
+
+            console.log(data);
+            return _react2.default.createElement(
+                'div',
+                { className: 'box' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'right' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'list' },
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        }),
+                        data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                _react2.default.createElement(
+                                    'span',
+                                    null,
+                                    index + 1
+                                ),
+                                '.',
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: '' },
+                                    item.title
+                                )
+                            );
+                        })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Index;
+}(_react2.default.Component);
+
+/***/ }),
+
+/***/ 84:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.default = function () {
+    var em = document.getElementById('js_login');
+    if (em) _reactDom2.default.render(_react2.default.createElement(Login, null), em);
+};
+
+var _react = __webpack_require__(33);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(32);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -130,20 +339,25 @@ var Login = function (_React$Component) {
 
 /***/ }),
 
-/***/ 84:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _login = __webpack_require__(83);
+var _login = __webpack_require__(84);
 
 var _login2 = _interopRequireDefault(_login);
+
+var _index = __webpack_require__(83);
+
+var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _login2.default)();
+(0, _index2.default)();
 
 /***/ })
 
-},[84]);
+},[85]);
