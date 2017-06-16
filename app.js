@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
@@ -26,9 +27,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret: 'mysession',
+    cookie:{
+        maxAge:60 * 60 * 1000
+    }
+}));
 
 //
 app.get(/home/, function (req, res, next) {
+    console.log(req.session.isvist);
+    console.log(req.cookie);
     next();
 })
 

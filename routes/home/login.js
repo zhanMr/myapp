@@ -11,8 +11,10 @@ router.post('/', (req, res) => {
     let sql = `select * from login where username = '${username}' and password = '${password}'`;
     query(sql, (err, rows, fields) => {
         console.log(rows.length);
+        res.cookie('user', username, {maxAge: 60 * 1000});
+        req.session.isvist = {'key': username};
         res.json({
-            a: 100
+            a: 1000
         })
     })
 
